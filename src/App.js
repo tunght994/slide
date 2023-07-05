@@ -11,6 +11,8 @@ import Lottie from "lottie-react";
 import Home from "./component/home";
 import IconExit from "./images/icon/exit";
 import { listItem } from "./data/dataListItem";
+import InfoBill from "./component/infoBill";
+import { detailInfoBill } from "./data/detailInfoBill";
 
 
 
@@ -28,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Home
+      {/* <Home
         nameOffice="PGD Thành Công"
         timeTransaction="09:48, 21 September 2019"
         title='Xin chào quý khách'
@@ -36,6 +38,11 @@ function App() {
         listItem={listItem}
         valueBtn="Thoát"
         iconBtn={<IconExit />}
+      /> */}
+      <InfoBill
+        nameOffice="PGD Thành Công"
+        timeTransaction="09:48, 21 September 2019"
+        detailInfoBill={detailInfoBill}
       />
       {/* {!cameraStreamUrl ? (
         <Slide mediaItemsT={listMedia} />
