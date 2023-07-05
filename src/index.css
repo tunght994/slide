@@ -17,4 +17,62 @@ body, #root, html {
   margin: 0;
   width: 1080px;
   height: 1920px;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: normal;
+  font-style: italic;
+  src: url("./images/fonts/SVN-Gilroy\ Italic.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: normal;
+  font-style: normal;
+  src: url("./images/fonts/SVN-Gilroy-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 500;
+  font-style: normal;
+  src: url("./images/fonts/SVN-Gilroy-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 600;
+  font-style: normal;
+  src: url("./images/fonts/SVN-Gilroy-SemiBold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: bold;
+  font-style: normal;
+  src: url("./images/fonts/SVN-Gilroy-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 800;
+  font-style: normal;
+  src: url("./images/fonts/SVN-Gilroy-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Kredit';
+  font-weight: normal;
+  font-style: normal;
+  src: url("./images/fonts/kredit_front.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('./images/fonts/times-new-roman-14.ttf') format('truetype');
+  /* src: url('./assets/fonts/TimesNewRomanMTStd.otf') format('truetype'); */
+  font-weight: normal;
+  font-style: normal;
 }

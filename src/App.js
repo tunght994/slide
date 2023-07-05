@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import test from "./images/video/bg-StandbyScreen.png";
-import vide1 from "./images/video/cccd.mp4";
-import vide from "./images/video/van_tay.mp4";
+
 import Slide from "./ViewPager";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMediaItems } from "./redux/slider/action";
@@ -10,15 +8,11 @@ import useConnectWsCamera from "./hook/useConnectWsCamera";
 
 import face_loading from "./images/Lottie/face_loading.json";
 import Lottie from "lottie-react";
+import Home from "./component/home";
+import IconExit from "./images/icon/exit";
+import { listItem } from "./data/dataListItem";
 
-export const mediaItemsT = {
-  time: 10000,
-  mediaItems: [
-    { type: "video", src: vide1 },
-    { type: "video", src: vide },
-    { type: "image", src: test },
-  ],
-};
+
 
 function App() {
   const lottieRef = useRef();
@@ -34,7 +28,16 @@ function App() {
 
   return (
     <>
-      {!cameraStreamUrl ? (
+      <Home
+        nameOffice="PGD Thành Công"
+        timeTransaction="09:48, 21 September 2019"
+        title='Xin chào quý khách'
+        desp='Mời quý khách lựa chọn giao dịch'
+        listItem={listItem}
+        valueBtn="Thoát"
+        iconBtn={<IconExit />}
+      />
+      {/* {!cameraStreamUrl ? (
         <Slide mediaItemsT={listMedia} />
       ) : (
         <div className="face-screen">
@@ -67,7 +70,7 @@ function App() {
           </div>
         </div>
       )}
-      ;
+       */}
     </>
   );
 }

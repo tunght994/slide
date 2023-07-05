@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { mediaItemsT } from '../../App';
+import { mediaItemsT } from '../../data/dataListItem';
 // Create an async thunk for fetching the data
 export const fetchMediaItems = createAsyncThunk('mediaItems/fetchMediaItems', async () => {
   const data = mediaItemsT

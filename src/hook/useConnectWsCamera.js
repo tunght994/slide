@@ -53,18 +53,18 @@ const useConnectWsCamera = () => {
                     case MESSAGE: {
                         const { code } = evtData;
                         let message = ""
-                        if (code == 20) {
+                        if (code === 20) {
                             message = "Đang xử lý, vui lòng giữ yên khuôn mặt.";
-                        } else if (code == 21) {
+                        } else if (code === 21) {
                             message = "Góc mặt không hợp lệ, vui lòng nhìn thẳng vào camera.";
-                        } else if (code == 22) {
+                        } else if (code === 22) {
                             message =
                                 "Khuôn mặt không đủ chi tiết vui lòng di chuyển khuôn mặt vào vùng nhận diện.";
-                        } else if (code == 23) {
+                        } else if (code === 23) {
                             message = "Khuôn mặt không hợp lệ.";
-                        } else if (code == 24) {
+                        } else if (code === 24) {
                             message = "Khuôn mặt quá nhỏ, vui lòng đưa khuôn mặt gần hơn.";
-                        } else if (code == 25) {
+                        } else if (code === 25) {
                             message = "Vui lòng giữ yên khuôn mặt trong vùng nhận diện.";
                         } else {
                             message = "Lấy khuôn mặt thành công.";
@@ -74,9 +74,9 @@ const useConnectWsCamera = () => {
                     }
                     case ERROR: {
                         const { code } = evtData;
-                        if (code == 11){
+                        if (code === 11){
                             setErrDevice("Không thấy camera kết nối")
-                        } else if (code == 12){
+                        } else if (code === 12){
                             setErrDevice("kết nối camera thất bại")
                         }
                         break;
