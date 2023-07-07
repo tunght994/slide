@@ -13,8 +13,7 @@ import IconExit from "./images/icon/exit";
 import { listItem } from "./data/dataListItem";
 import InfoBill from "./component/infoBill";
 import { detailInfoBill } from "./data/detailInfoBill";
-
-
+import FingerScan from "./component/FingerScan";
 
 function App() {
   const lottieRef = useRef();
@@ -39,10 +38,14 @@ function App() {
         valueBtn="Thoát"
         iconBtn={<IconExit />}
       /> */}
-      <InfoBill
+      {/* <InfoBill
         nameOffice="PGD Thành Công"
         timeTransaction="09:48, 21 September 2019"
         detailInfoBill={detailInfoBill}
+      /> */}
+      <FingerScan
+        nameOffice="PGD Thành Công"
+        timeTransaction="09:48, 21 September 2019"
       />
       {/* {!cameraStreamUrl ? (
         <Slide mediaItemsT={listMedia} />

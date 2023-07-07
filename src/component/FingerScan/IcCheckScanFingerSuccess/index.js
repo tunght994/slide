@@ -1,0 +1,29 @@
+import React from 'react'
+
+export default function IcCheckScanFingerSuccess(props) {
+    return (
+        <svg {...props} width={131} height={131} viewBox="0 0 131 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_7174_17168)">
+                <circle cx="65.5" cy="49.5" r="25.5" fill="url(#paint0_linear_7174_17168)" />
+            </g>
+            <path d="M73.4203 43.8433C73.3105 43.7327 73.18 43.6449 73.0361 43.5849C72.8922 43.525 72.7379 43.4941 72.5821 43.4941C72.4262 43.4941 72.2719 43.525 72.1281 43.5849C71.9842 43.6449 71.8536 43.7327 71.7439 43.8433L62.9488 52.6503L59.2536 48.9433C59.1397 48.8333 59.0052 48.7467 58.8578 48.6886C58.7104 48.6305 58.553 48.6021 58.3946 48.6048C58.2361 48.6075 58.0798 48.6415 57.9345 48.7046C57.7892 48.7678 57.6578 48.8589 57.5477 48.9729C57.4376 49.0868 57.3511 49.2213 57.293 49.3687C57.2349 49.5161 57.2064 49.6735 57.2092 49.8319C57.2119 49.9903 57.2458 50.1466 57.309 50.292C57.3721 50.4373 57.4633 50.5687 57.5772 50.6788L62.1106 55.2121C62.2203 55.3227 62.3509 55.4106 62.4947 55.4705C62.6386 55.5304 62.7929 55.5613 62.9488 55.5613C63.1046 55.5613 63.2589 55.5304 63.4028 55.4705C63.5466 55.4106 63.6772 55.3227 63.7869 55.2121L73.4203 45.5788C73.5401 45.4682 73.6357 45.334 73.7012 45.1847C73.7666 45.0354 73.8003 44.8741 73.8003 44.7111C73.8003 44.548 73.7666 44.3867 73.7012 44.2374C73.6357 44.0881 73.5401 43.9539 73.4203 43.8433Z" fill="white" />
+            <defs>
+                <filter id="filter0_d_7174_17168" x={0} y={0} width={131} height={131} filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                    <feOffset dy={16} />
+                    <feGaussianBlur stdDeviation={20} />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7174_17168" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7174_17168" result="shape" />
+                </filter>
+                <linearGradient id="paint0_linear_7174_17168" x1="65.5" y1={24} x2="65.5" y2={75} gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#41C728" />
+                    <stop offset={1} stopColor="#1FC000" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+
+    )
+}

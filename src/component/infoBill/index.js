@@ -3,6 +3,7 @@ import { Wrap, WrapInfoBill } from "./index.styled";
 import Header from "../header";
 import { NORMAL, VIP } from "../../data/detailInfoBill";
 import XuatVe from '../../images/img/xuat_ve.png'
+import FormTransactionReceipt from "../FormTransactionReceipt";
 
 const InfoBill = ({ nameOffice, timeTransaction, detailInfoBill }) => {
   return (
