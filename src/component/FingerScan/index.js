@@ -8,9 +8,17 @@ import IcFingerDefault from "../../images/icon/IcFingerDefault";
 import SuccessAnimation from "./SuccessAnimation";
 import IcCheckScanFingerSuccess from "./IcCheckScanFingerSuccess";
 import animationGetFinger from "../../images/json/finger_captured.json";
+import useConnectScannerFinger from "../../hook/useConnectScannerFinger";
 
 const FingerScan = ({ nameOffice, timeTransaction }) => {
-  const [dataFinger, setDataFinger] = useState(false);
+
+  const {
+    wsRef,
+    connectWs,
+    wsConnected,
+    message,
+  } = useConnectScannerFinger()
+
   const [isCheckFinger, setisCheckFinger] = useState(false);
 
   return (
@@ -22,7 +30,7 @@ const FingerScan = ({ nameOffice, timeTransaction }) => {
             <img src={VerifieldFinger} alt="VerifieldFinger" />
           </div>
           <div className="content-finger">
-            {!dataFinger ? (
+            {!message ? (
               <div className="content-finger-default">
                 <span className="content-finger-default-value">
                   Vui lòng đưa ngón tay bất kỳ vào vùng nhận diện{" "}
@@ -31,17 +39,24 @@ const FingerScan = ({ nameOffice, timeTransaction }) => {
               </div>
             ) : (
               <div className="content-finger-check">
-                {dataFinger && isCheckFinger ? (
+                {isCheckFinger ? (
                     <div className="content-finger-check-success">
-                        <SuccessAnimation
-                          successAnimation={animationGetFinger}
-                          className="animation"
-                        />
+                        <div className="image-success">
+                          <SuccessAnimation
+                            successAnimation={animationGetFinger}
+                            className="animation"
+                          />
+                          <div className="icon">
+                            <IcCheckScanFingerSuccess />
+                          </div>
+                        </div>
                         <span className="content-finger-check-default-value">Xác nhận vân tay</span>
                     </div>
                 ) : (
                     <div className="content-finger-check-default">
-                        <IcFingerDefault />
+                        <div className="image">
+                          <IcFingerDefault />
+                        </div>
                         <span className="content-finger-check-default-value">Đang ghi nhận...</span>
                     </div>
                 )}
