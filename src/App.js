@@ -27,6 +27,11 @@ function App() {
     dispatch(fetchMediaItems());
   }, []);
 
+  const handleLatestVideo = () => {
+    console.log("call api here");
+  };
+
+
   return (
     <>
       {/* <Home
@@ -48,7 +53,7 @@ function App() {
         timeTransaction="09:48, 21 September 2019"
       />
       {/* {!cameraStreamUrl ? (
-        <Slide mediaItemsT={listMedia} />
+        <Slide mediaItemsT={listMedia} handleLatestVideo={handleLatestVideo}/>
       ) : (
         <div className="face-screen">
           <div className="block-face">
