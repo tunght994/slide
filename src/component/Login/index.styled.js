@@ -55,7 +55,7 @@ const WrapPopupLinkKiosk = styled.div`
         font-style: normal;
         font-weight: 500;
         line-height: 125%; /* 40px */
-        margin: 64px 0;
+        margin-top: 64px;
     }
     .btn-container{
         display: flex;
@@ -72,6 +72,7 @@ const WrapPopupLinkKiosk = styled.div`
         cursor: pointer;
         width: 360px;
         height: 108px;
+        margin: 64px 0 0 0;
     }
 `
 

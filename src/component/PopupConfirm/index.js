@@ -5,7 +5,12 @@ import IcCheck from "../../images/icon/IcCheck";
 import IcEnd from "../../images/icon/IcEnd";
 
 const PopupConfirm = ({ title, desc, hidePopup, time , isWarning}) => {
+
   const handleSubmit = () => {
+    hidePopup();
+  };  
+
+  const handleEnd = () => {
     hidePopup();
   };
 
@@ -14,12 +19,12 @@ const PopupConfirm = ({ title, desc, hidePopup, time , isWarning}) => {
       <WrapPopupComfirm>
         <div className="title">{title}</div>
         <div className="desc">{desc}</div>
-        <div className="btn" onClick={handleSubmit}>
-          <div className="btn-end">
+        <div className="btn" >
+          <div className="btn-end" onClick={handleEnd}>
             <IcEnd />
             Kết thúc
           </div>
-          <div className="btn-next">
+          <div className="btn-next" onClick={handleSubmit}>
             <IcCheck />
             Tiếp tục
           </div>

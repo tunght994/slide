@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { WrapHeader } from "./index.styled";
 import logoBank from "../../images/img/logo.png";
 import PopupLinkKios from "../Login";
@@ -11,9 +11,14 @@ import { toBeRequired } from "@testing-library/jest-dom/matchers";
 const Header = ({ timeTransaction, nameOffice }) => {
 
   const [isShowPopup, setIsShowPopup] = useState(false);
-  // const [isErrorDevice, setIsErrorDevice] = useState(false);
-  const [isNextTransaction, setIsNextTransaction] = useState(false);
+  const [isErrorDevice, setIsErrorDevice] = useState(true);
+  const [isNextTransaction, setIsNextTransaction] = useState(true);
+  const [count, setCount] = useState(10);
 
+
+  const hidePopup = () => {
+    
+  }
   return (
     <WrapHeader>
       <div className="header-left">
@@ -24,6 +29,10 @@ const Header = ({ timeTransaction, nameOffice }) => {
         <img src={logoBank} alt="logo" />
         <span className="name-bank">AGRIBANK</span>
       </div>
+    {/* {
+      isShowPopup && <PopupLinkKios hidePopup={() => setIsShowPopup(false)}/>
+    } */}
+
       {/* {isShowPopup && (
         <PopupEror
           hidePopup={() => setIsShowPopup(false)}
@@ -40,7 +49,7 @@ const Header = ({ timeTransaction, nameOffice }) => {
           title={`${isNextTransaction ? "Tiếp tục giao dịch" : "Kết thúc giao dịch"}`}
           desc={`${isNextTransaction ? "Bạn vui lòng bấm nút “Tiếp tục” để tiếp tục giao dịch" : "Bạn có chắc chắn muốn kết thúc phiên giao dịch này?"}`}
           isWarning={isNextTransaction}
-          time="10"
+          time={count}
         />
       }
     </WrapHeader>
