@@ -13,19 +13,38 @@ const Header = ({ timeTransaction, nameOffice }) => {
   const [isShowPopup, setIsShowPopup] = useState(false);
   const [isErrorDevice, setIsErrorDevice] = useState(true);
   const [isNextTransaction, setIsNextTransaction] = useState(true);
-  const [count, setCount] = useState(10);
+  const [countdown, setCountdown] = useState(10);
 
+  useEffect(() => {
+    let timer;
 
-  const hidePopup = () => {
-    
-  }
+    if (isShowPopup && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown((prevCountdown) => prevCountdown - 1);
+      }, 1000);
+    }
+
+    return () => {
+      clearInterval(timer);
+    };
+    }, [isShowPopup, countdown]); 
+
+    const openPopup = () => {
+      setIsShowPopup(true)
+      setCountdown(10);
+    };
+
+    const hidePopup = () => {
+      
+    }
+
   return (
     <WrapHeader>
       <div className="header-left">
         <span className="name-office">{nameOffice}</span>
         <span className="time">{timeTransaction}</span>
       </div>
-      <div className="header-right" onClick={() => setIsShowPopup(true)}>
+      <div className="header-right" onClick={openPopup}>
         <img src={logoBank} alt="logo" />
         <span className="name-bank">AGRIBANK</span>
       </div>
@@ -45,11 +64,11 @@ const Header = ({ timeTransaction, nameOffice }) => {
 
       {
         isShowPopup && <PopupConfirm
-          hidePopup={() => setIsShowPopup(false)}
+          hidePopup={hidePopup}
           title={`${isNextTransaction ? "Tiếp tục giao dịch" : "Kết thúc giao dịch"}`}
           desc={`${isNextTransaction ? "Bạn vui lòng bấm nút “Tiếp tục” để tiếp tục giao dịch" : "Bạn có chắc chắn muốn kết thúc phiên giao dịch này?"}`}
           isWarning={isNextTransaction}
-          time={count}
+          time={countdown}
         />
       }
     </WrapHeader>
