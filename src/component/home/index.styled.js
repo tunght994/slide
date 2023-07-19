@@ -32,7 +32,6 @@ const WrapHome = styled.div`
         font-weight: 700;
         &-item{
             width: calc(500px - 64px);
-
             .general{
                 width: 100%;
                 height: 120px;

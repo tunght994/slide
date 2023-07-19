@@ -9,6 +9,9 @@ import SuccessAnimation from "./SuccessAnimation";
 import IcCheckScanFingerSuccess from "./IcCheckScanFingerSuccess";
 import animationGetFinger from "../../images/json/finger_captured.json";
 import useConnectScannerFinger from "../../hook/useConnectScannerFinger";
+import { useSelector } from "react-redux";
+import { NEWACCOUNT } from "../../data/dataListItem";
+import { motion } from 'framer-motion';
 
 const FingerScan = ({ nameOffice, timeTransaction }) => {
 
@@ -20,9 +23,16 @@ const FingerScan = ({ nameOffice, timeTransaction }) => {
   } = useConnectScannerFinger()
 
   const [isCheckFinger, setisCheckFinger] = useState(false);
+  const key = useSelector((state) => state.mediaItemsSlice.key);
 
   return (
     <Wrap>
+      <motion.div
+        initial={{ width: 0}}
+        animate={{ width: "100%"}}
+        exit={{ width: window.innerWidth, transition: { duration: 0.1}}}
+      >
+
       <Header nameOffice={nameOffice} timeTransaction={timeTransaction} />
       <WrapFingerScan>
         <div className="content">
@@ -68,6 +78,7 @@ const FingerScan = ({ nameOffice, timeTransaction }) => {
           </div>
         </div>
       </WrapFingerScan>
+      </motion.div>
     </Wrap>
   );
 };

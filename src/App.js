@@ -14,6 +14,9 @@ import { listItem } from "./data/dataListItem";
 import InfoBill from "./component/infoBill";
 import { detailInfoBill } from "./data/detailInfoBill";
 import FingerScan from "./component/FingerScan";
+import { AnimatePresence } from 'framer-motion';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Outlet } from "react-router-dom";
 
 function App() {
   const lottieRef = useRef();
@@ -34,6 +37,9 @@ function App() {
 
   return (
     <>
+    <AnimatePresence>
+      <Outlet />
+    </AnimatePresence>
       {/* <Home
         nameOffice="PGD Thành Công"
         timeTransaction="09:48, 21 September 2019"
@@ -48,10 +54,10 @@ function App() {
         timeTransaction="09:48, 21 September 2019"
         detailInfoBill={detailInfoBill}
       /> */}
-      <FingerScan
+      {/* <FingerScan
         nameOffice="PGD Thành Công"
         timeTransaction="09:48, 21 September 2019"
-      />
+      /> */}
       {/* {!cameraStreamUrl ? (
         <Slide mediaItemsT={listMedia} handleLatestVideo={handleLatestVideo}/>
       ) : (
@@ -86,7 +92,7 @@ function App() {
         </div>
       )}
        */}
-    </>
+      </>
   );
 }
 

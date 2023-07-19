@@ -7,15 +7,20 @@ import vide from "../images/video/van_tay.mp4";
 export const LEFT = "LEFT"
 export const RIGHT = "RIGHT"
 
+export const NEWACCOUNT = "NEWACCOUNT"
+export const NEWNUMBER = "NEWNUMBER"
+
 const listItem = [
   {
     value: "Mở tài khoản",
     icon: <IconNewAccount />,
+    key: NEWACCOUNT,
     position: LEFT
   },
   {
     value: "Sao kê - số phụ",
     icon: <IconNewAccount />,
+    key: NEWNUMBER,
     position: RIGHT
   },
   {
